@@ -18,8 +18,8 @@ c = 3e8
 def gen_pos_D(d, L, n):
     # d : size of imaging domain, (assumed to be a square), in other context d_v is the internal field for the vth illumination
     # L : resolution of the imaging domain
-	h = 0.025
-	x = y = np.linspace(-32*h, 32*h, 64)
+	h = 0.035
+	x = y = np.linspace(-16*h, 16*h, 32)
 	x, y = np.meshgrid(x, y, indexing="xy")
 	pos_D = np.stack((x.ravel(), y.ravel()), axis=-1)
 	return pos_D
@@ -62,8 +62,8 @@ def gen_pos_S(qq,qe,qt):
  
     d = 128
     # u = 64
-    h = 0.025
-    x = y = np.linspace(-64*h, 64*h, d)
+    h = 0.035
+    x = y = np.linspace(-32*h, 32*h, 64)
     x, y = np.meshgrid(x, y, indexing="xy")
 
     # Reshape to (128*128, 2)
